@@ -1,3 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="cs" data-lang-system"cs">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <title>Pepa's kingdom</title>
+  <body>
+    <div>
+      <ul style="list-style-type: none; margin: 0; padding: 0; width: 100%; background-color: #262625; color: white; height: 10%; position: sticky;  left: 10%; top: 5%; bottom: 0%; right: 10%; overflow-x: hidden; overflow-y: hidden; border: solid 1px #262625; text-align: center; z-index: 5; display: flex; font-weight: bold; float: left;">
+        <a>Under developing</a>
+      </ul>
+    </div>
+    <div>
+      <a>Under developing</a>
+      <br><br><br><br><br>
+      <a>Developing time: 21.9.2022 18:00 to 21.11.2022 18:00</a>
+      <br>
+      <a>---</a>
+    </div>
+    <div>
+      <a> Čas dokončení projektu</a><br>
+      <a id="dday"></a>
+    </div>
+    <script>
+    var countDownDate = new Date("November 22, 2022 18:00:00").getTime();
+    var x = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      document.getElementById("dday").innerHTML = days + "d " + hours + "h "+ minutes + "m " + seconds + "s ";
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("dday").innerHTML = "Projekt dokončen!";
+      }
+    }, 1000);
+    </script>
+  </body>
 </html>
